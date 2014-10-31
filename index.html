@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="icon" href="assets/favicon.png" type="image/png" />
+
+		<title>Get Reactive Today - M Haidar Hanif - Meteor Jakarta Meetup</title>
+
+		<meta name="description" content="Getting started into reactive programming with Meteor">
+		<meta name="author" content="M Haidar Hanif">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<!-- build:css css/tidy.css -->
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/night-meteor.css" id="theme">
+		<!-- build:css css/tidy.css -->
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section id="title" class="fragments" data-background="assets/abstract-meteor.jpg">
+					<h1 class="fragment">Get <span class="reactive animated pulse">Reactive</span> Today</h1>
+					<p class="fragment"><b>Getting started into reactive programming/development with any technology stack or
+					<span class="meteor-logo small">Meteor</span></b></p>		
+					</aside>
+					<aside class="notes">
+						<ul>
+							<li>Give the big picture what is going to talk about.</li>
+							<li>This isn't just about Meteor, but all kinds of applicable system</li>
+						</ul>
+					</aside>
+				</section>
+				
+				<section id="about-presentation">
+					<img class="icon" height="300" width="300" src="assets/icons/happy.svg" onerror="this.src='assets/icons/happy.png'" alt="Happy slide">
+					<br>
+					<a href="http://bit.ly/mhaidarh-talk-reactive">http://bit.ly/mhaidarh-talk-reactive</a>
+					<small>
+						<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png"></a>
+						<br>This presentation is licensed under a
+						<br>
+						<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>
+					</small>
+					<br>
+					<small class="credit">
+						"Happy slide icon" designed by <a href="http://thenounproject.com/Julihan">Julien Deveaux</a> from the <a href="http://thenounproject.com">Noun Project</a>
+					</small>
+				</section>
+
+				<section id="about-me">
+					<a class="image" href="https://keybase.io/mhaidarh" target="_blank">
+						<img class="avatar" height="200" width="200" src="assets/mhaidarh.png" alt="M Haidar Hanif's avatar">
+					</a>
+					<p>
+						M Haidar Hanif | Technology Generalist
+						<br>
+						<a href="https://twitter.com/mhaidarh">@mhaidarh</a> | <a href="https://google.com/+MHaidarHanif">+MHaidarHanif</a>
+						<br>
+						<a href="http://mhaidarhanif.org">http://mhaidarhanif.org</a>
+						<br>
+						[<i>or just google me</i>]
+						<br>
+					</p>
+					<aside class="notes">
+						<ul>
+							<li>Quick introduction about personal identity</li>
+							<li>Currently a generalist alias a student</li>
+							<li>Will be software engineer/developer/designer</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="story">
+					<h2>Let's begin with a story</h2>
+					<p>
+						of informatics student who is approaching his graduation soon and trying to finish a thesis before it officially got started...
+					</p>
+					<aside class="notes">
+						<ul>
+							<li>Just a side story before and after discover Meteor and reactive programming</li>
+							<li>Also how amazing software development especially web is revolving rapidly</li>
+							<li>Most current education system haven't catch up yet</li>
+							<li>And then I discovered...</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="quick-demo-time" data-background="assets/perseids-stars.jpg">
+					<h2 class="white">Quick <u>Demo Time</u>!</h2>
+					<aside class="notes">
+						<ul>
+							<li>...</li>
+							<li>...</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="what">
+					<h2>What is reactive programming?</h2>
+					<blockquote cite="https://en.wikipedia.org/wiki/Reactive_programming">
+					&ldquo;A programming paradigm that is a subset of dataflow programming, oriented around data flows and the propagation of change.&rdquo;
+					</blockquote>
+					<!-- <img height="200px" src="assets/mhaidarh.png" alt="Reactive illustatrion"> -->
+					<!-- <small>[<i></i>]</small> -->
+				</section>
+
+				<section id="what-more">
+					<h2>Furthermore</h2>
+					<ul>
+						<li>Mostly implemented in the next step of functional programming</li>
+						<li>Native support in <a href="http://elm-lang.org">Elm programming language</a></li>
+						<li>Implemented in dozen of languages with <a href="https://rx.codeplex.com">RX (Reactive Extensions) Framework</a></li>
+						<li>Even used in a UI library with its application architecture, <a href="http://facebook.github.io/react">React</a> and <a href="http://facebook.github.io/flux">Flux</a></li>
+					</ul>
+				</section>
+
+				<section id="what-vs">
+					<h2>Reactive vs* Real-Time</h2>
+					<table>
+						<thead>
+							<tr>
+								<th><a href="https://en.wikipedia.org/wiki/Reactive_programming">Reactive</a></th>
+								<th><a href="https://en.wikipedia.org/wiki/Real-time_computing">Real-Time</a></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Living/Responsive</td>
+								<td>Instant/Immediate</td>
+							</tr>
+							<tr>
+								<td>Paradigm/System</td>
+								<td>System</td>
+							</tr>
+							<tr>
+								<td>Model/Code/Style</td>
+								<td>Structure/Organization</td>
+							</tr>
+							<tr>
+								<td>11</td>
+								<td>12</td>
+							</tr>
+							<tr></tr>
+						</tbody>
+					</table>
+					<small>*in most cases</small>
+					<aside class="notes">
+						Actually not so much differences, even can be interchangeable
+					</aside>
+				</section>
+
+				<section id="illus-ordinary">
+					<h2>An ordinary illustration</h2>
+					<pre><code data-trim contenteditable>
+var a = 1;     // 1
+var b = a + 1; // 2
+a = 10;        // 10
+b = a + 1;     // 11
+					</code></pre>
+				</section>
+
+				<section id="illus-super">
+					<h2>A super illustration</h2>
+					<pre><code data-trim contenteditable>
+var a = 1;
+var b <= a + 1;
+a = 10;
+// b is automagically 11
+					</code></pre>
+				</section>
+
+				<section id="why" class="fragments">
+					<h2>Why?</h2>
+					<p class="fragment">Because it's <span class="fragment highlight-red">hot</span></p>
+					<p class="fragment">Also it's the <span class="fragment highlight-blue">future</span></p>
+					<p class="fragment">
+						<img class="icon" height="300" width="300" src="assets/icons/space-shuttle.svg" onerror="this.src='assets/icons/space-shuttle.png'" alt="Space shuttle">
+						<br>
+						<small class="credit">
+							"Space shuttle icon" designed by <a href="http://thenounproject.com/alydodds">Aly Dodds</a> from the <a href="http://thenounproject.com">Noun Project</a>
+						</small>
+					</p>
+					<aside class="notes">
+						Also like hot code push
+					</aside>
+				</section>
+
+				<section id="done">
+					<h2>What I've <u>done</u> with it</h2>
+					<p>Still in exploration</p>
+				</section>
+
+				<section id="build">
+					<h2>What we can <br> <u>get</u> and <u>build</u></h2>
+					<p>{TEXT}</p>
+				</section>
+
+				<section id="manifesto">
+					<h2>The Reactive Manifesto</h2>
+					<p><a href="http://reactivemanifesto.org">http://reactivemanifesto.org</a></p>
+					<br>
+					<blockquote cite="http://reactivemanifesto.org">
+					&ldquo;Organisations working in disparate domains are independently discovering patterns for building software that look the same. These systems are more robust, more resilient, more flexible and better positioned to meet modern demands.&rdquo;
+					</blockquote>
+					<small class="fragment grow">Basically said, expressing that relationships in code could last happily ever after.</small>
+				</section>
+
+				<section id="refer">
+					<img height="244px" width="670px" src="assets/reactive-traits.svg" alt="Reactive traits">
+					<p>Refer to system modeling after human organizations or inter-human communication</p>
+					<ul>
+						<li>Responsive and asynchronous</li>
+						<li>Elastic or scalable under load</li>
+						<li>Resilient in the presence of failures</li>
+						<li>Message or event driven</li>
+					</ul>
+				</section>
+
+				<!--
+				<section id="composable">
+					<h2>Composable</h2>
+					<ul>
+						<li><strong>Self-contained (modular)</strong>: It can be deployed independently, may cooperate with other components but dependent components are replaceable</li>
+						<li><strong>Stateless</strong>: It treats each request as an independent transaction, unrelated to any previous request.</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>So we can use or integrate any technology with it</li>
+							<li>Stateless is just one technique; managed state and transactional systems can also be composable, but with greater difficulty.</li>
+						</ul>
+					</aside>
+				</section>
+				-->
+
+				<section id="observable">
+					<h2>Observable</h2>
+					<p>{TEXT}</p>
+					<a href="http://rxmarbles.com/#map" target="_blank">
+					<img height="225px" width="657px" src="assets/rxmarbles-map.png" alt="RxMarbels map">
+					</a>
+				</section>
+
+				<section id="meet-meteor">
+					<h2>Meet <span class="meteor-logo">Meteor</span></h2>
+					<h3><a href="https://meteor.com">https://meteor.com</a></h3>
+					<p>The most amazingly easy and rapid web development platform for building full-stack reactive JavaScript apps to date</p>
+					<aside class="notes">
+						<ul>
+							<li>Meteor is more than a framework, it is a platform with combining the best of Node.js and NoSQL</li>
+							<li>Meteor make it really easy to build reactive apps without early cumbersome details</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="meteor-principles">
+					<h2>7 Principles of <span class="meteor-logo">Meteor</span></h2>
+					<ol>
+						<li>Data on the Wire</li>
+						<li>One Language</li>
+						<li>Database Everywhere</li>
+						<li>Latency Compensation</li>
+						<li class="fragment grow highlight-blue">Full Stack Reactivity</li>
+						<li>Embrace the Ecosystem</li>
+						<li>Simplicity Equals Productivity</li>
+					</ol>
+					<aside class="notes">
+						Read them completely on Meteor.com
+					</aside>
+				</section>
+
+				<section id="meteor-reactivity">
+					<h2>5. Full Stack Reactivity</h2>
+					<p>Make realtime the default. All layers, from database to template, should make an event-driven interface available.</p>
+					<aside class="notes">
+						<ul>
+							<li>...</li>
+							<li>...</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="meteor-reactive-core">
+					<h2>Inside Meteor Core Library</h2>
+					<ul>
+						<li><a href="https://meteor.com/tracker">Meteor Tracker: Transparent reactive programming in JavaScript</a></li>
+						<li><a href="https://meteor.com/blaze">Meteor Blaze: Reactive UI/Templating Library</a></li>
+					</ul>	
+					<aside class="notes">
+						<ul>
+							<li>...</li>
+							<li>...</li>
+						</ul>
+					</aside>
+				</section>
+				
+				<section id="full-demo-time" data-background="assets/perseids-stars.jpg">
+					<h2 class="white">Full <u>Demo Time</u>!</h2>
+					<aside class="notes">
+						<ul>
+							<li>...</li>
+							<li>...</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="news-time">
+					<h2><u>News Time</u>!</h2>
+					<h4>Concurrently on 28 October 2014!</h4>
+					<p>
+					HTML5 specification finalized and became a W3C recommendation
+					<a href="http://www.w3.org/blog/news/archives/4167">http://www.w3.org/blog/news/archives/4167</a>
+					</p>
+					<p>
+					Meteor 1.0 has released on 28 October 2014
+					<a href="https://meteor.com/blog/2014/10/28/meteor-1-0">https://meteor.com/blog/2014/10/28/meteor-1-0</a>
+					</p>
+				</section>
+
+				<section id="promo-time-devs">
+					<h2><u>Promo Time</u>!</h2>
+					<h3>Influential/Inspiring Developers</h3>
+					<ul>
+						<li>Jafar Husain: <a href="https://twitter.com/jhusain">@jhusain</a></li>
+						<li>Dr. Roland Kuhn: <a href="https://twitter.com/rolandkuhn">@rolandkuhn</a> / <a href="http://rolandkuhn.com">http://rolandkuhn.com</a></li>
+						<li>James Roper: <a href="https://twitter.com/jroper">@jroper</a> / <a href="https://jazzy.id.au">https://jazzy.id.au</a></li>
+					</ul>
+				</section>
+				
+				<section id="promo-time-community">
+					<h2><u>Promo Time</u>!</h2>
+					<h3>Community/Meetup</h3>
+					<ul>
+						<li>JakartaJS: <a href="http://meetup.com/JakartaJS">http://meetup.com/JakartaJS</a></li>
+						<li>NoSQL Indonesia: <a href="http://meetup.com/NoSQL-Indonesia">http://meetup.com/NoSQL-Indonesia</a></li>
+						<li>Python Indonesia: <a href="http://meetup.com/Python-ID">http://meetup.com/Python-ID</a></li>
+						<li>Docker Jakarta: <a href="http://meetup.com/Docker-Jakarta">http://meetup.com/Docker-Jakarta</a></li>
+						<li>StartupLokal: <a href="http://meetup.com/startuplokal">http://meetup.com/startuplokal</a></li>
+					</ul>
+					<small>if interested, join, or become co-organizer</small>
+				</section>
+
+				<section id="startup-idea">
+					<img height="200" width="200" alt="Hazeorid logo" src="assets/hazeorid.png">
+					<h2>Startup Idea</h2>
+					<p>
+						Satellid: Micro Knowledge Management System
+						<br>
+						<a href="https://github.com/hazeorid/satellid">https://github.com/hazeorid/satellid</a>
+					</p>
+					<ul>
+						<li>Platform for managing any kind of knowledge</li>
+						<li>Still in early development, design, system, SaaS, business value, and experience craftsmanship</li>
+						<li>The MVP will be based on Meteor</li>
+					</ul>
+					<aside class="notes">
+						<ul>
+							<li>Because most tools and system are not good enough</li>
+							<li>Focusing on micro scale, modularity is high</li>
+							<li>Featuring JSON only document, transclusion, and much more</li>
+							<li>Actually also my thesis</li>
+						</ul>
+					</aside>
+				</section>
+				
+				<section id="more-info">
+					<h3>All Assets Repository</h3>
+					<p><a href="https://github.com/mhaidarh/talk-reactive">https://github.com/mhaidarh/talk-reactive</a></p>
+					<h3>Additional Info and Materials</h3>
+					<p>Check out <a href="https://github.com/mhaidarh/talk-reactive/README.md">https://github.com/mhaidarh/talk-reactive/README.md</a></p>
+					<aside class="notes">
+						This presentation is just a glimpse, a tip of the iceberg, of all things that need to explore and be covered
+					</aside>
+				</section>
+
+				<section id="end" data-background="assets/space-meteorite-planet-rain_meteor-logo.jpg">
+					<!-- <h2>Thank You!</h2> -->
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'fade', // default/cube/page/concave/zoom/linear/fade/none
+				transitionSpeed: 'slow', // default / fast / slow
+
+				// Parallax scrolling
+				parallaxBackgroundImage: 'assets/patterns/stardust.png',
+				parallaxBackgroundSize: '798px 798px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

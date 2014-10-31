@@ -1,0 +1,69 @@
+/**
+ * Black theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import "../template/fonts";
+
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #111;
+
+$mainFont: 'Open Sans', sans-serif;
+$linkColor: #de4f4f; // hsl(0, 68%, 59%)
+$linkColorHover: lighten( $linkColor, 20% );
+$headingFont: 'Montserrat', Impact, sans-serif;
+$headingColor: #4fdede; // hsl(50, 68%, 59%)
+$headingTextShadow: none;
+$headingLetterSpacing: -0.03em;
+$headingTextTransform: none;
+$selectionBackgroundColor: #ea8f8f; // hsl(0, 68%, 74%)
+$mainFontSize: 40px;
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+.white {
+	color: #fff !important;
+}
+
+.credit {
+	font-size: 50% !important;
+  opacity: 0.5;
+}
+
+.reactive {
+	text-shadow: 0 0 5px #caf5f5,
+							0 0 100px #a7eeee,
+							0 0 150px #a7eeee;
+  -moz-animation-iteration-count: infinite;
+  -webkit-animation-iteration-count: infinite;
+  -o-animation-iteration-count: infinite;
+  -ms-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.meteor-logo {
+	height: 0;
+	color: hsla(0, 0%, 100%, 0);
+	overflow: hidden;
+	background: url("../../assets/meteor-logo.svg") no-repeat center -13px;
+	background-size: 400px 96px;
+	padding: 0 70px 0 70px !important;
+	&.small {
+		background-size: 200px 48px;
+		background-position: center -5px;
+		padding: 0 35px 0 35px !important;
+	}
+}
+
