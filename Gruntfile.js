@@ -41,7 +41,7 @@ module.exports = function(grunt) {
 		uncss: {
 			dist: {
 				files: {
-					'css/tidy.css': [ 'index.html', 'deck.html' ]
+					'css/tidy.css': [ 'index.html' ]
 				}
 			}
 		},
