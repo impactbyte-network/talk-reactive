@@ -472,7 +472,7 @@ body {
 .reveal .progress {
 	position: fixed;
 	display: none;
-	height: 3px;
+	height: 10px;
 	width: 100%;
 	bottom: 0;
 	left: 0;
@@ -1584,6 +1584,10 @@ body {
 /*********************************************
  * PARALLAX BACKGROUND
  *********************************************/
+
+.fade-background {
+	opacity: 0.5;
+}
 
 .reveal.has-parallax-background .backgrounds {
 	-webkit-transition: all 0.8s ease;

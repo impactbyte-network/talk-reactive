@@ -46,15 +46,18 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 
-				<section id="title" class="fragments" data-background="assets/abstract-meteor.jpg">
+				<section id="title" class="fragments" data-background="assets/backgrounds/abstract-meteor.jpg">
 					<h1 class="fragment">Get <span class="reactive animated pulse">Reactive</span> Today</h1>
 					<p class="fragment"><b>Getting started into reactive programming/development with any technology stack or
 					<span class="meteor-logo small">Meteor</span></b></p>		
 					</aside>
 					<aside class="notes">
 						<ul>
-							<li>Give the big picture what is going to talk about.</li>
+							<li>Give the big picture what is going to talk about, so mostly the explanation is simplified</li>
 							<li>This isn't just about Meteor, but all kinds of applicable system</li>
+							<li>Because the current condition is, everyone is using various different stacks</li>
+							<li>Let's have a all-way discussion, not just listening</li>
+							<li>This is one of my first public talks, so let me know if there's a suggestion or something wrong</li>
 						</ul>
 					</aside>
 				</section>
@@ -101,19 +104,30 @@
 				<section id="story">
 					<h2>Let's begin with a story</h2>
 					<p>
-						of informatics student who is approaching his graduation soon and trying to finish a thesis before it officially got started...
+						of informatics student who is approaching his graduation soon and trying to finish an MVP for a thesis before it officially got started...
 					</p>
 					<aside class="notes">
 						<ul>
 							<li>Just a side story before and after discover Meteor and reactive programming</li>
 							<li>Also how amazing software development especially web is revolving rapidly</li>
 							<li>Most current education system haven't catch up yet</li>
-							<li>And then I discovered...</li>
+							<li>And then I discovered the next stage of software/web development workflow, especially Meteor</li>
 						</ul>
 					</aside>
 				</section>
 
-				<section id="quick-demo-time" data-background="assets/perseids-stars.jpg">
+				<section id="quick-question">
+					<h2 class="white">Quick <u>Question</u></h2>
+					<aside class="notes">
+						<ul>
+							<li>Who are here have actually tried Meteor?</li>
+							<li>Using/developing reactive or real-time application?</li>
+							<li>But you have seen all of that, right?</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section id="quick-demo-time" data-background="assets/backgrounds/perseids-stars.jpg">
 					<h2 class="white">Quick <u>Demo Time</u>!</h2>
 					<aside class="notes">
 						<ul>
@@ -123,16 +137,24 @@
 					</aside>
 				</section>
 
-				<section id="what">
-					<h2>What is reactive programming?</h2>
-					<blockquote cite="https://en.wikipedia.org/wiki/Reactive_programming">
-					&ldquo;A programming paradigm that is a subset of dataflow programming, oriented around data flows and the propagation of change.&rdquo;
+				<section id="what-more">
+					<h2>What is <span class="reactive animated pulse">reactivity</span>?</h2>
+					<blockquote cite="http://solidmeteor.com/meteor-reactivity-gear-1-explained-simply">
+					&ldquo;Reactivity is a data-centric feature that allows executing certain functions when the data, which they depend on, change. Reactivity is not a pattern, it's a general idea implemented using several patterns.&rdquo;
 					</blockquote>
-					<!-- <img height="200px" src="assets/mhaidarh.png" alt="Reactive illustatrion"> -->
-					<!-- <small>[<i></i>]</small> -->
+					<!-- <img height="200px" src="assets/mhaidarh.png" alt="Reactivity illustatrion"> -->
 				</section>
 
 				<section id="what-more">
+					<h2>What is <span class="reactive animated pulse">reactive</span> programming?</h2>
+					<blockquote cite="https://en.wikipedia.org/wiki/Reactive_programming">
+					&ldquo;A programming paradigm that is a subset of dataflow programming, oriented around data flows and the propagation of change.&rdquo;
+					</blockquote>
+					<!-- <img height="200px" src="assets/mhaidarh.png" alt="Reactive programming illustatrion"> -->
+					<!-- <small>[<i></i>]</small> -->
+				</section>
+
+				<section id="what-more-again">
 					<h2>Furthermore</h2>
 					<ul>
 						<li>Mostly implemented in the next step of functional programming</li>
@@ -142,8 +164,49 @@
 					</ul>
 				</section>
 
+				<section id="what-about-frp">
+					<h2>What about functional <span class="reactive animated pulse">reactive</span> programming (FRP)?</h2>
+					<blockquote cite="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754">
+					&ldquo;FRP is programming with asynchronous data streams. And anything can be a stream: variables, user inputs, properties, caches, data structures, etc. Then the stream can be manipulated (with create, merge, filter, map, scan, etc) using functions that create new stream, because the original stream is immutable.&rdquo;
+					</blockquote>
+					<!-- <img height="200px" src="assets/mhaidarh.png" alt="Reactive programming illustatrion"> -->
+					<!-- <small>[<i></i>]</small> -->
+				</section>
+
+				<section id="illus-ordinary">
+					<h2>An ordinary illustration: Typical/Imperative</h2>
+					<pre><code data-trim contenteditable>
+var a = 1;     // 1
+var b = a + 1; // 2
+a = 10;        // 10
+b = a + 1;     // 11
+					</code></pre>
+				</section>
+
+				<section id="illus-super">
+					<h2>A super illustration: <span class="reactive animated pulse">Reactive</span></h2>
+					<pre><code data-trim contenteditable>
+var a = 1;
+var b <= a + 1;
+a = 10;
+// b is automagically 11
+					</code></pre>
+				</section>
+
+				<section id="observable">
+					<h2>A comprehensive illustration: Observable</h2>
+					<p>From the <a href="https://en.wikipedia.org/wiki/Observer_pattern">observer pattern</a></p>
+					<p>Supposed there is a stream where within it there are some ongoing events ordered in time</p>
+					<a href="http://rxmarbles.com/#map" target="_blank">
+					<img height="225px" width="657px" src="assets/rxmarbles-map.png" alt="RxMarbels map">
+					</a>
+					<aside class="notes">
+						Here we can use observer pattern to illustrate reactivity. It can emit three different things: a value (of some type), an error, or a "completed" signal. These emitted evetns captured asynchronously.
+					</aside>
+				</section>
+
 				<section id="what-vs">
-					<h2>Reactive vs* Real-Time</h2>
+					<h2><span class="reactive animated pulse">Reactive</span> vs* Real-Time</h2>
 					<table>
 						<thead>
 							<tr>
@@ -173,32 +236,13 @@
 					</table>
 					<small>*in most cases</small>
 					<aside class="notes">
-						Actually not so much differences, even can be interchangeable
+						This is just some notes. Actually not so much differences, often can be interchangeable.
+						But the point is, reactive is not necessarily a real-time.
 					</aside>
 				</section>
 
-				<section id="illus-ordinary">
-					<h2>An ordinary illustration</h2>
-					<pre><code data-trim contenteditable>
-var a = 1;     // 1
-var b = a + 1; // 2
-a = 10;        // 10
-b = a + 1;     // 11
-					</code></pre>
-				</section>
-
-				<section id="illus-super">
-					<h2>A super illustration</h2>
-					<pre><code data-trim contenteditable>
-var a = 1;
-var b <= a + 1;
-a = 10;
-// b is automagically 11
-					</code></pre>
-				</section>
-
 				<section id="why" class="fragments">
-					<h2>Why?</h2>
+					<h2>Why do we do this?</h2>
 					<p class="fragment">Because it's <span class="fragment highlight-red">hot</span></p>
 					<p class="fragment">Also it's the <span class="fragment highlight-blue">future</span></p>
 					<p class="fragment">
@@ -213,9 +257,19 @@ a = 10;
 					</aside>
 				</section>
 
+				<section id="why-seriously" class="fragments">
+					<h2>Why, seriously?</h2>
+					<p>
+						This way we can improve the performance of our system or application. Especially reducing the amount of work to implement it quickly.
+					</p>
+					<aside class="notes">
+						
+					</aside>
+				</section>
+
 				<section id="done">
 					<h2>What I've <u>done</u> with it</h2>
-					<p>Still in exploration</p>
+					<p>Still in exploration and experimentation</p>
 				</section>
 
 				<section id="build">
@@ -224,7 +278,7 @@ a = 10;
 				</section>
 
 				<section id="manifesto">
-					<h2>The Reactive Manifesto</h2>
+					<h2>The <span class="reactive animated pulse">Reactive</span> Manifesto</h2>
 					<p><a href="http://reactivemanifesto.org">http://reactivemanifesto.org</a></p>
 					<br>
 					<blockquote cite="http://reactivemanifesto.org">
@@ -242,6 +296,9 @@ a = 10;
 						<li>Resilient in the presence of failures</li>
 						<li>Message or event driven</li>
 					</ul>
+					<aside class="notes">
+						<!-- Large systems are composed of smaller ones and therefore depend on the Reactive properties of their constituents. This means that Reactive Systems apply design principles so these properties apply at all levels of scale, making them composable. -->
+					</aside>
 				</section>
 
 				<!--
@@ -260,18 +317,10 @@ a = 10;
 				</section>
 				-->
 
-				<section id="observable">
-					<h2>Observable</h2>
-					<p>{TEXT}</p>
-					<a href="http://rxmarbles.com/#map" target="_blank">
-					<img height="225px" width="657px" src="assets/rxmarbles-map.png" alt="RxMarbels map">
-					</a>
-				</section>
-
 				<section id="meet-meteor">
 					<h2>Meet <span class="meteor-logo">Meteor</span></h2>
 					<h3><a href="https://meteor.com">https://meteor.com</a></h3>
-					<p>The most amazingly easy and rapid web development platform for building full-stack reactive JavaScript apps to date</p>
+					<p>The most amazingly easy and rapid web development platform for building full-stack <span class="reactive animated pulse">reactive</span> JavaScript web/mobile apps to date</p>
 					<aside class="notes">
 						<ul>
 							<li>Meteor is more than a framework, it is a platform with combining the best of Node.js and NoSQL</li>
@@ -287,7 +336,7 @@ a = 10;
 						<li>One Language</li>
 						<li>Database Everywhere</li>
 						<li>Latency Compensation</li>
-						<li class="fragment grow highlight-blue">Full Stack Reactivity</li>
+						<li class="fragment grow highlight-blue">Full Stack <span class="reactive animated pulse">Reactivity</span></li>
 						<li>Embrace the Ecosystem</li>
 						<li>Simplicity Equals Productivity</li>
 					</ol>
@@ -297,7 +346,7 @@ a = 10;
 				</section>
 
 				<section id="meteor-reactivity">
-					<h2>5. Full Stack Reactivity</h2>
+					<h2>5. Full Stack <span class="reactive animated pulse">Reactivity</span></h2>
 					<p>Make realtime the default. All layers, from database to template, should make an event-driven interface available.</p>
 					<aside class="notes">
 						<ul>
@@ -310,13 +359,13 @@ a = 10;
 				<section id="meteor-reactive-core">
 					<h2>Inside Meteor Core Library</h2>
 					<ul>
-						<li><a href="https://meteor.com/tracker">Meteor Tracker: Transparent reactive programming in JavaScript</a></li>
-						<li><a href="https://meteor.com/blaze">Meteor Blaze: Reactive UI/Templating Library</a></li>
+						<li><a href="https://meteor.com/tracker">Meteor Tracker (formerly Deps): Transparent <span class="reactive animated pulse">reactive</span> programming in JavaScript</a></li>
+						<li><a href="https://meteor.com/blaze">Meteor Blaze: <span class="reactive animated pulse">Reactive</span> UI/Templating Library</a></li>
 					</ul>	
 					<aside class="notes">
 						<ul>
-							<li>...</li>
-							<li>...</li>
+							<li>Tracker is a very simple convention or interface that gives the power of an FRP system without requiring to rewrite the program as a FRP data flow graph. Combined with Tracker-aware libraries, this lets to build complex event-driven programs without writing a lot of boilerplate event-handling code. Also reactive data sources (like your database) talk to reactive data consumers (such as a live-updating HTML templating library) without the application code in between having to be involved.</li>
+							<li>Blaze is a powerful library for creating live-updating user interfaces. Blaze has the same purpose as Angular, Backbone, Ember, React, Polymer, or Knockout, but is much easier to use. Using Spacebars, Meteor's dialect of Handlebars, but could also use another templating language. It is like "reactive jQuery", but declarative rather than imperative.</li>
 						</ul>
 					</aside>
 				</section>
@@ -356,7 +405,7 @@ a = 10;
 				
 				<section id="promo-time-community">
 					<h2><u>Promo Time</u>!</h2>
-					<h3>Community/Meetup</h3>
+					<h3>Recently Active Community/Meetup</h3>
 					<ul>
 						<li>JakartaJS: <a href="http://meetup.com/JakartaJS">http://meetup.com/JakartaJS</a></li>
 						<li>NoSQL Indonesia: <a href="http://meetup.com/NoSQL-Indonesia">http://meetup.com/NoSQL-Indonesia</a></li>
@@ -384,7 +433,7 @@ a = 10;
 						<ul>
 							<li>Because most tools and system are not good enough</li>
 							<li>Focusing on micro scale, modularity is high</li>
-							<li>Featuring JSON only document, transclusion, and much more</li>
+							<li>Featuring reactivity, JSON only document, transclusion, and much more</li>
 							<li>Actually also my thesis</li>
 						</ul>
 					</aside>
@@ -416,7 +465,7 @@ a = 10;
 					</aside>
 				</section>
 
-				<section id="end" data-background="assets/space-meteorite-planet-rain_meteor-logo.jpg">
+				<section id="end" data-background="assets/backgrounds/space-meteorite-planet-rain_meteor-logo.jpg">
 					<!-- <h2>Thank You!</h2> -->
 				</section>
 
@@ -442,8 +491,15 @@ a = 10;
 				transitionSpeed: 'slow', // default / fast / slow
 
 				// Parallax scrolling
-				parallaxBackgroundImage: 'assets/patterns/stardust.png',
-				parallaxBackgroundSize: '798px 798px',
+				// parallaxBackgroundImage: 'assets/patterns/stardust.png',
+				parallaxBackgroundImage: 'assets/backgrounds/outer-space-hd.jpg',
+				parallaxBackgroundSize: '1920px 1200px',
+				parallaxBackgroundOpacity: 0.3,
+				/*
+					Credits:
+					http://imgstocks.com/outer-space-wallpaper-41243.html
+					http://planezen.com/post/outer-space-hd-background-wallpaper-18-hd-wallpaper.html
+				*/
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [

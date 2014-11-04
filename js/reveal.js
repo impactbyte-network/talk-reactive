@@ -106,6 +106,9 @@ var Reveal = (function(){
 
 			// Parallax background size
 			parallaxBackgroundSize: '', // CSS syntax, e.g. "3000px 2000px"
+			
+			// Parallax background opacity
+			parallaxBackgroundOpacity: 0.5, // CSS syntax, e.g. "0.5"
 
 			// Number of slides away from the current that are visible
 			viewDistance: 3,
@@ -387,12 +390,12 @@ var Reveal = (function(){
 		dom.controls = document.querySelector( '.reveal .controls' );
 
 		// There can be multiple instances of controls throughout the page
-		dom.controlsLeft = toArray( document.querySelectorAll( '.navigate-left' ) );
+		dom.controlsLeft  = toArray( document.querySelectorAll( '.navigate-left' ) );
 		dom.controlsRight = toArray( document.querySelectorAll( '.navigate-right' ) );
-		dom.controlsUp = toArray( document.querySelectorAll( '.navigate-up' ) );
-		dom.controlsDown = toArray( document.querySelectorAll( '.navigate-down' ) );
-		dom.controlsPrev = toArray( document.querySelectorAll( '.navigate-prev' ) );
-		dom.controlsNext = toArray( document.querySelectorAll( '.navigate-next' ) );
+		dom.controlsUp    = toArray( document.querySelectorAll( '.navigate-up' ) );
+		dom.controlsDown  = toArray( document.querySelectorAll( '.navigate-down' ) );
+		dom.controlsPrev  = toArray( document.querySelectorAll( '.navigate-prev' ) );
+		dom.controlsNext  = toArray( document.querySelectorAll( '.navigate-next' ) );
 
 	}
 
@@ -440,6 +443,7 @@ var Reveal = (function(){
 				backgroundSize: slide.getAttribute( 'data-background-size' ),
 				backgroundImage: slide.getAttribute( 'data-background-image' ),
 				backgroundColor: slide.getAttribute( 'data-background-color' ),
+				backgroundOpacity: slide.getAttribute( 'data-background-opacity' ),
 				backgroundRepeat: slide.getAttribute( 'data-background-repeat' ),
 				backgroundPosition: slide.getAttribute( 'data-background-position' ),
 				backgroundTransition: slide.getAttribute( 'data-background-transition' )
@@ -459,13 +463,14 @@ var Reveal = (function(){
 			}
 
 			if( data.background || data.backgroundColor || data.backgroundImage ) {
-				element.setAttribute( 'data-background-hash', data.background + data.backgroundSize + data.backgroundImage + data.backgroundColor + data.backgroundRepeat + data.backgroundPosition + data.backgroundTransition );
+				element.setAttribute( 'data-background-hash', data.background + data.backgroundSize + data.backgroundImage + data.backgroundColor + data.backgroundOpacity + data.backgroundRepeat + data.backgroundPosition + data.backgroundTransition );
 			}
 
 			// Additional and optional background properties
 			if( data.backgroundSize ) element.style.backgroundSize = data.backgroundSize;
 			if( data.backgroundImage ) element.style.backgroundImage = 'url("' + data.backgroundImage + '")';
 			if( data.backgroundColor ) element.style.backgroundColor = data.backgroundColor;
+			if( data.backgroundOpacity ) element.style.backgroundOpacity = data.backgroundOpacity;
 			if( data.backgroundRepeat ) element.style.backgroundRepeat = data.backgroundRepeat;
 			if( data.backgroundPosition ) element.style.backgroundPosition = data.backgroundPosition;
 			if( data.backgroundTransition ) element.setAttribute( 'data-background-transition', data.backgroundTransition );
@@ -507,6 +512,7 @@ var Reveal = (function(){
 
 			dom.background.style.backgroundImage = 'url("' + config.parallaxBackgroundImage + '")';
 			dom.background.style.backgroundSize = config.parallaxBackgroundSize;
+			dom.background.style.backgroundOpacity = config.parallaxBackgroundOpacity;
 
 			// Make sure the below properties are set on the element - these properties are
 			// needed for proper transitions to be set on the element via CSS. To remove
