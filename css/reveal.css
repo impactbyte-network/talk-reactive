@@ -1585,10 +1585,6 @@ body {
  * PARALLAX BACKGROUND
  *********************************************/
 
-.fade-background {
-	opacity: 0.5;
-}
-
 .reveal.has-parallax-background .backgrounds {
 	-webkit-transition: all 0.8s ease;
 	   -moz-transition: all 0.8s ease;

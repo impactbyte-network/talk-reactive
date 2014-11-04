@@ -24,6 +24,7 @@ Talk about getting into reactive programming in [3rd Meteor Jakarta Meetup](http
 + [Elm: Functional reactive language for interactive applications and web programming](http://elm-lang.org)
 + [Rx (Reactive Extensions) on CodePlex](https://rx.codeplex.com)
 + [ReactiveX | ReactiveExtensions on GitHub](https://github.com/reactive-extensions)
++ [Bacon.js: Small functional reactive programming lib for JavaScript]()
 
 ### Meteor Specific
 

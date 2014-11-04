@@ -196,6 +196,12 @@ body {
 .reveal table tr:last-child td {
   border-bottom: none; }
 
+.backgrounds {
+  opacity: 0.5; }
+
+.wallpaper {
+  opacity: 1 !important; }
+
 .white {
   color: #fff !important; }
 
@@ -222,3 +228,10 @@ body {
     background-size: 200px 48px;
     background-position: center -5px;
     padding: 0 35px 0 35px !important; }
+
+.rounded {
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -o-border-radius: 15px;
+  -ms-border-radius: 15px; }

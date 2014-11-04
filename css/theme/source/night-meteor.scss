@@ -33,6 +33,14 @@ $mainFontSize: 40px;
 @import "../template/theme";
 // ---------------------------------------------
 
+.backgrounds {
+	opacity: 0.5;
+}
+
+.wallpaper {
+	opacity: 1 !important;
+}
+
 .white {
 	color: #fff !important;
 }
@@ -64,5 +72,13 @@ $mainFontSize: 40px;
 		background-position: center -5px;
 		padding: 0 35px 0 35px !important;
 	}
+}
+
+.rounded {
+	border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-o-border-radius: 15px;
+	-ms-border-radius: 15px;
 }
 

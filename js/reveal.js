@@ -443,10 +443,10 @@ var Reveal = (function(){
 				backgroundSize: slide.getAttribute( 'data-background-size' ),
 				backgroundImage: slide.getAttribute( 'data-background-image' ),
 				backgroundColor: slide.getAttribute( 'data-background-color' ),
-				backgroundOpacity: slide.getAttribute( 'data-background-opacity' ),
 				backgroundRepeat: slide.getAttribute( 'data-background-repeat' ),
 				backgroundPosition: slide.getAttribute( 'data-background-position' ),
-				backgroundTransition: slide.getAttribute( 'data-background-transition' )
+				backgroundTransition: slide.getAttribute( 'data-background-transition' ),
+				opacity: slide.getAttribute( 'data-opacity' )
 			};
 
 			var element = document.createElement( 'div' );
@@ -463,17 +463,17 @@ var Reveal = (function(){
 			}
 
 			if( data.background || data.backgroundColor || data.backgroundImage ) {
-				element.setAttribute( 'data-background-hash', data.background + data.backgroundSize + data.backgroundImage + data.backgroundColor + data.backgroundOpacity + data.backgroundRepeat + data.backgroundPosition + data.backgroundTransition );
+				element.setAttribute( 'data-background-hash', data.background + data.backgroundSize + data.backgroundImage + data.backgroundColor + data.backgroundRepeat + data.backgroundPosition + data.backgroundTransition + data.opacity );
 			}
 
 			// Additional and optional background properties
 			if( data.backgroundSize ) element.style.backgroundSize = data.backgroundSize;
 			if( data.backgroundImage ) element.style.backgroundImage = 'url("' + data.backgroundImage + '")';
 			if( data.backgroundColor ) element.style.backgroundColor = data.backgroundColor;
-			if( data.backgroundOpacity ) element.style.backgroundOpacity = data.backgroundOpacity;
 			if( data.backgroundRepeat ) element.style.backgroundRepeat = data.backgroundRepeat;
 			if( data.backgroundPosition ) element.style.backgroundPosition = data.backgroundPosition;
 			if( data.backgroundTransition ) element.setAttribute( 'data-background-transition', data.backgroundTransition );
+			if( data.opacity ) element.style.opacity = data.opacity;
 
 			container.appendChild( element );
 

@@ -21,7 +21,7 @@
 		<!-- default css/tidy.css -->
 
 		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<link rel="stylesheet" href="lib/css/github.css">
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -53,11 +53,11 @@
 					</aside>
 					<aside class="notes">
 						<ul>
-							<li>Give the big picture what is going to talk about, so mostly the explanation is simplified</li>
-							<li>This isn't just about Meteor, but all kinds of applicable system</li>
-							<li>Because the current condition is, everyone is using various different stacks</li>
-							<li>Let's have a all-way discussion, not just listening</li>
-							<li>This is one of my first public talks, so let me know if there's a suggestion or something wrong</li>
+							<li>Bahasa, English, or bilingual?</li>
+							<li>Give the big picture what is going to talk about, so mostly the explanation is simplified.</li>
+							<li>This isn't just about Meteor, but all kinds of applicable system. Because the current condition is, everyone is using various different stacks.</li>
+							<li>Let's have a all-way discussion, not just a one-way presentation.</li>
+							<li>This is one of my first public talks, so let me know if there's a suggestion or something wrong.</li>
 						</ul>
 					</aside>
 				</section>
@@ -94,9 +94,9 @@
 					</p>
 					<aside class="notes">
 						<ul>
-							<li>Quick introduction about personal identity</li>
-							<li>Currently a generalist alias a student</li>
-							<li>Will be software engineer/developer/designer</li>
+							<li>Quick introduction about personal identity.</li>
+							<li>Currently a generalist alias a student.</li>
+							<li>Will be software engineer/developer/designer.</li>
 						</ul>
 					</aside>
 				</section>
@@ -108,10 +108,10 @@
 					</p>
 					<aside class="notes">
 						<ul>
-							<li>Just a side story before and after discover Meteor and reactive programming</li>
-							<li>Also how amazing software development especially web is revolving rapidly</li>
-							<li>Most current education system haven't catch up yet</li>
-							<li>And then I discovered the next stage of software/web development workflow, especially Meteor</li>
+							<li>Just a side story before and after discover Meteor and reactive programming.</li>
+							<li>Also how amazing software development especially web is revolving rapidly.</li>
+							<li>Most current education system haven't catch up yet.</li>
+							<li>And then I discovered the next stage of software/web development workflow, especially Meteor.</li>
 						</ul>
 					</aside>
 				</section>
@@ -167,15 +167,18 @@
 				<section id="what-about-frp">
 					<h2>What about functional <span class="reactive animated pulse">reactive</span> programming (FRP)?</h2>
 					<blockquote cite="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754">
-					&ldquo;FRP is programming with asynchronous data streams. And anything can be a stream: variables, user inputs, properties, caches, data structures, etc. Then the stream can be manipulated (with create, merge, filter, map, scan, etc) using functions that create new stream, because the original stream is immutable.&rdquo;
+					&ldquo;FRP is programming with asynchronous data streams. And anything can be a stream: variables, user inputs, properties, caches, data structures, etc. Then the stream can be manipulated (with create, merge, combine, filter, map, scan, etc) using functions that create new stream, because the original stream is immutable.&rdquo;
 					</blockquote>
 					<!-- <img height="200px" src="assets/mhaidarh.png" alt="Reactive programming illustatrion"> -->
 					<!-- <small>[<i></i>]</small> -->
+					<aside class="notes">
+						There is even object-oriented reactive programming (OORP).
+					</aside>
 				</section>
 
 				<section id="illus-ordinary">
 					<h2>An ordinary illustration: Typical/Imperative</h2>
-					<pre><code data-trim contenteditable>
+					<pre><code data-trim contenteditable class="rounded">
 var a = 1;     // 1
 var b = a + 1; // 2
 a = 10;        // 10
@@ -185,7 +188,7 @@ b = a + 1;     // 11
 
 				<section id="illus-super">
 					<h2>A super illustration: <span class="reactive animated pulse">Reactive</span></h2>
-					<pre><code data-trim contenteditable>
+					<pre><code data-trim contenteditable class="rounded">
 var a = 1;
 var b <= a + 1;
 a = 10;
@@ -198,10 +201,10 @@ a = 10;
 					<p>From the <a href="https://en.wikipedia.org/wiki/Observer_pattern">observer pattern</a></p>
 					<p>Supposed there is a stream where within it there are some ongoing events ordered in time</p>
 					<a href="http://rxmarbles.com/#map" target="_blank">
-					<img height="225px" width="657px" src="assets/rxmarbles-map.png" alt="RxMarbels map">
+					<img class="rounded" height="225px" width="657px" src="assets/rxmarbles-map.png" alt="RxMarbels map">
 					</a>
 					<aside class="notes">
-						Here we can use observer pattern to illustrate reactivity. It can emit three different things: a value (of some type), an error, or a "completed" signal. These emitted evetns captured asynchronously.
+						There are a lot of ways of seeing the reactive stream. But here we can use a common observer pattern with marbles to illustrate reactivity. It can emit three different signals: a value (of some type that can change over time), an error, or a "completed" signal. These emitted evetns captured asynchronously.
 					</aside>
 				</section>
 
@@ -253,17 +256,19 @@ a = 10;
 						</small>
 					</p>
 					<aside class="notes">
-						Also like hot code push
+						Also like hot code push. So, who agree or think the same?
 					</aside>
 				</section>
 
 				<section id="why-seriously" class="fragments">
 					<h2>Why, seriously?</h2>
 					<p>
-						This way we can improve the performance of our system or application. Especially reducing the amount of work to implement it quickly.
+						This way we can improve the performance of our system or application. Especially reducing the amount of work to quickly implement a logic that require data flow, and more power beyond asynchronous.
+						
+						
 					</p>
 					<aside class="notes">
-						
+						Additionally, it is a time-saving and bug-preventing programming paradigm worthy of all developers.
 					</aside>
 				</section>
 
@@ -323,8 +328,9 @@ a = 10;
 					<p>The most amazingly easy and rapid web development platform for building full-stack <span class="reactive animated pulse">reactive</span> JavaScript web/mobile apps to date</p>
 					<aside class="notes">
 						<ul>
-							<li>Meteor is more than a framework, it is a platform with combining the best of Node.js and NoSQL</li>
-							<li>Meteor make it really easy to build reactive apps without early cumbersome details</li>
+							<li>As you have previously know...</li>
+							<li>Meteor is more than a framework, it is a platform with combining the best of Node.js and NoSQL.</li>
+							<li>Meteor make it really easy to build reactive apps without early cumbersome details.</li>
 						</ul>
 					</aside>
 				</section>
@@ -341,7 +347,7 @@ a = 10;
 						<li>Simplicity Equals Productivity</li>
 					</ol>
 					<aside class="notes">
-						Read them completely on Meteor.com
+						Read them completely on Meteor documentation.
 					</aside>
 				</section>
 
@@ -359,18 +365,18 @@ a = 10;
 				<section id="meteor-reactive-core">
 					<h2>Inside Meteor Core Library</h2>
 					<ul>
-						<li><a href="https://meteor.com/tracker">Meteor Tracker (formerly Deps): Transparent <span class="reactive animated pulse">reactive</span> programming in JavaScript</a></li>
-						<li><a href="https://meteor.com/blaze">Meteor Blaze: <span class="reactive animated pulse">Reactive</span> UI/Templating Library</a></li>
+						<li><a href="https://meteor.com/tracker">Meteor Tracker</a> (formerly Deps): Transparent <span class="reactive animated pulse">reactive</span> programming in JavaScript and Dependency tracker to allow reactive callbacks</li>
+						<li><a href="https://meteor.com/blaze">Meteor Blaze</a>: <span class="reactive animated pulse">Reactive</span> UI/Templating Library</li>
 					</ul>	
 					<aside class="notes">
 						<ul>
 							<li>Tracker is a very simple convention or interface that gives the power of an FRP system without requiring to rewrite the program as a FRP data flow graph. Combined with Tracker-aware libraries, this lets to build complex event-driven programs without writing a lot of boilerplate event-handling code. Also reactive data sources (like your database) talk to reactive data consumers (such as a live-updating HTML templating library) without the application code in between having to be involved.</li>
-							<li>Blaze is a powerful library for creating live-updating user interfaces. Blaze has the same purpose as Angular, Backbone, Ember, React, Polymer, or Knockout, but is much easier to use. Using Spacebars, Meteor's dialect of Handlebars, but could also use another templating language. It is like "reactive jQuery", but declarative rather than imperative.</li>
+							<li>Blaze is a powerful library for creating live-updating user interfaces. Blaze has the same purpose as Angular, Backbone, Ember, React, Polymer, or Knockout; but is much easier to use. The template syntax is using Spacebars, Meteor's dialect of Handlebars, but could also use another templating language. It is like "reactive jQuery", but declarative rather than imperative. It consists of a template compiler and a reactive DOM engine.</li>
 						</ul>
 					</aside>
 				</section>
 				
-				<section id="full-demo-time" data-background="assets/perseids-stars.jpg">
+				<section id="full-demo-time" data-background="assets/backgrounds/perseids-stars.jpg">
 					<h2 class="white">Full <u>Demo Time</u>!</h2>
 					<aside class="notes">
 						<ul>
@@ -431,10 +437,10 @@ a = 10;
 					</ul>
 					<aside class="notes">
 						<ul>
-							<li>Because most tools and system are not good enough</li>
-							<li>Focusing on micro scale, modularity is high</li>
-							<li>Featuring reactivity, JSON only document, transclusion, and much more</li>
-							<li>Actually also my thesis</li>
+							<li>Because most tools and system are not good enough.</li>
+							<li>Focusing on micro scale, modularity is high.</li>
+							<li>Featuring reactivity, JSON only document, transclusion, and much more.</li>
+							<li>Actually also my thesis.</li>
 						</ul>
 					</aside>
 				</section>
@@ -448,6 +454,9 @@ a = 10;
 							"Asteroid icon" designed by <a href="http://thenounproject.com/iainhector">Iain Hector</a> from the <a href="http://thenounproject.com">Noun Project</a>
 						</small>
 					</p>
+					<aside class="notes">
+						I feel Meteor is kinda slow for the first run and resource hungry, do you feel the same?
+					</aside>
 				</section>
 				
 				<section id="more-info">
@@ -465,8 +474,11 @@ a = 10;
 					</aside>
 				</section>
 
-				<section id="end" data-background="assets/backgrounds/space-meteorite-planet-rain_meteor-logo.jpg">
+				<section id="end" class="wallpaper" data-background="assets/backgrounds/space-meteorite-planet-rain_meteor-logo.jpg">
 					<!-- <h2>Thank You!</h2> -->
+					<aside class="notes">
+						As always, thank you!
+					</aside>
 				</section>
 
 			</div>
