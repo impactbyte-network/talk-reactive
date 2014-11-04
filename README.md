@@ -17,6 +17,7 @@ Talk about getting into reactive programming in [3rd Meteor Jakarta Meetup](http
 + [The introduction to Reactive Programming you've been missing by André Staltz](https://gist.github.com/staltz/868e7e9bc2a7b8c1f754)
 + [Reactive Programming in JavaScript on Silk's Engineering Blog](http://engineering.silk.co/post/80056130804/reactive-programming-in-javascript)
 + [What is (functional) reactive programming? on Stack Overflow](http://stackoverflow.com/questions/1028250/what-is-functional-reactive-programming)
++ [Netflix JavaScript Talks: Async JavaScript with Reactive Extensions by Netflix UI Engineering on YouTube](https://youtu.be/FAZJsxcykPs)
 
 ### Language and Frameworks
 
@@ -31,6 +32,7 @@ Talk about getting into reactive programming in [3rd Meteor Jakarta Meetup](http
 + [Learn Meteor.js Properly on JavaScript is Sexy](http://javascriptissexy.com/learn-meteor-js-properly)
 + [Meteor Cookbook by Abigail Watson & mcrayne](http://meteorgitbook.harp.io)
 + [Discover Meteor: Learn how to build real-time JavaScript web apps with Meteor.js](https://book.discovermeteor.com)
++ [EventedMind: Learn Meteor. Videos and classes on Meteor, NodeJS and Web development](http://eventedmind.com)
 
 # Slide Deck
 
@@ -38,7 +40,7 @@ This slide deck is using [reveal.js](https://github.com/hakimel/reveal.js), a fr
 
 ## Software License
 
-MIT licensed
+MIT License
 
 Copyright (C) 2014 Hakim El Hattab, http://hakim.se
 
