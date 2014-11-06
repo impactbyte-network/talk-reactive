@@ -13,8 +13,9 @@
 			#notes {
 				font-size: 24px;
 				width: 640px;
-				margin-top: 5px;
-				clear: left;
+				margin-top: 24px;
+				/* clear: left; */
+				float: right;
 			}
 
 			#wrap-current-slide {
@@ -150,10 +151,12 @@
 			<script>document.write( '<iframe width="1280" height="1024" id="current-slide" src="'+ notesCurrentSlideURL +'"></iframe>' );</script>
 		</div>
 
+		<!--
 		<div id="wrap-next-slide" class="slides">
 			<script>document.write( '<iframe width="640" height="512" id="next-slide" src="'+ notesNextSlideURL +'"></iframe>' );</script>
 			<span>UPCOMING:</span>
 		</div>
+		-->
 
 		<div class="time">
 			<div class="clock">
@@ -177,7 +180,7 @@
 
 					var notes = document.getElementById( 'notes' ),
 						currentSlide = document.getElementById( 'current-slide' ),
-						nextSlide = document.getElementById( 'next-slide' ),
+						// nextSlide = document.getElementById( 'next-slide' ),
 						silenced = false;
 
 					window.addEventListener( 'message', function( event ) {
@@ -197,7 +200,7 @@
 
 						// Update the note slides
 						currentSlide.contentWindow.Reveal.slide( data.indexh, data.indexv, data.indexf );
-						nextSlide.contentWindow.Reveal.slide( data.nextindexh, data.nextindexv );
+						// nextSlide.contentWindow.Reveal.slide( data.nextindexh, data.nextindexv );
 
 						silenced = false;
 

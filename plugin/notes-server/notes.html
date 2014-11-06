@@ -15,8 +15,9 @@
 			#notes {
 				font-size: 24px;
 				width: 640px;
-				margin-top: 5px;
-				clear: left;
+				margin-top: 24px;
+				/* clear: left; */
+				float: right;
 			}
 
 			#wrap-current-slide {
@@ -95,10 +96,12 @@
 			<iframe src="/?receiver" width="1280" height="1024" id="current-slide"></iframe>
 		</div>
 
+		<!--
 		<div id="wrap-next-slide" class="slides">
 			<iframe src="/?receiver" width="640" height="512" id="next-slide"></iframe>
 			<span>UPCOMING:</span>
 		</div>
+		-->
 		<div id="notes"></div>
 
 		<script src="/socket.io/socket.io.js"></script>
@@ -109,7 +112,7 @@
 		var socket = io.connect(window.location.origin);
 		var notes = document.getElementById('notes');
 		var currentSlide = document.getElementById('current-slide');
-		var nextSlide = document.getElementById('next-slide');
+		// var nextSlide = document.getElementById('next-slide');
 
 		socket.on('slidedata', function(data) {
 			// ignore data from sockets that aren't ours
@@ -123,7 +126,7 @@
 			}
 
 			currentSlide.contentWindow.Reveal.slide(data.indexh, data.indexv);
-			nextSlide.contentWindow.Reveal.slide(data.nextindexh, data.nextindexv);
+			// nextSlide.contentWindow.Reveal.slide(data.nextindexh, data.nextindexv);
 		});
 		socket.on('fragmentdata', function(data) {
 			// ignore data from sockets that aren't ours
