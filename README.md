@@ -20,6 +20,8 @@ Talk about getting into reactive programming in [3rd Meteor Jakarta Meetup](http
 + [Reactive Programming in JavaScript on Silk's Engineering Blog](http://engineering.silk.co/post/80056130804/reactive-programming-in-javascript)
 + [What is (functional) reactive programming? on Stack Overflow](http://stackoverflow.com/questions/1028250/what-is-functional-reactive-programming)
 + [Netflix JavaScript Talks: Async JavaScript with Reactive Extensions by Netflix UI Engineering on YouTube](https://youtu.be/FAZJsxcykPs)
++ [What is Reactive Programming? by Paul Stovell](http://paulstovell.com/blog/reactive-programming)
++ [What is Reactive Programming? on Medium by Kevin Webber](https://medium.com/reactive-programming/what-is-reactive-programming-bc9fa7f4a7fc)
 
 ### Language and Frameworks
 
@@ -53,4 +55,3 @@ Copyright (C) 2014 Hakim El Hattab, http://hakim.se
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 
 Copyright (C) 2014 M Haidar Hanif, http://mhaidarhanif.org
-
