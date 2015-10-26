@@ -4,10 +4,12 @@ Get Reactive Today
 | Name | M Haidar Hanif
 |:---- |:--------------
 | Username | [@mhaidarh](https://github.com/mhaidarh)
-| Website  | <http://mhaidarhanif.org>
+| Website  | <http://mhaidarhanif.com>
 | Slide    | [View Live](http://mhaidarhanif.org/talk-reactive)
 
 Talk about getting into reactive programming in [3rd Meteor Jakarta Meetup](http://www.meetup.com/Meteor-Jakarta/events/213790002/) on 6th November 2014 ([Worldwide Meteor Day](http://meteorday.com)). Always a work in progress, emphasize improvement overtime.
+
+*  *  *
 
 ## Additional Info and Materials
 
@@ -25,6 +27,7 @@ Talk about getting into reactive programming in [3rd Meteor Jakarta Meetup](http
 
 ### Language and Frameworks
 
++ React
 + [Elm: Functional reactive language for interactive applications and web programming](http://elm-lang.org)
 + [Rx (Reactive Extensions) on CodePlex](https://rx.codeplex.com)
 + [ReactiveX | ReactiveExtensions on GitHub](https://github.com/reactive-extensions)
@@ -39,6 +42,12 @@ Talk about getting into reactive programming in [3rd Meteor Jakarta Meetup](http
 + [Meteor Cookbook by Abigail Watson & mcrayne](http://meteorgitbook.harp.io)
 + [Discover Meteor: Learn how to build real-time JavaScript web apps with Meteor.js](https://book.discovermeteor.com)
 + [EventedMind: Learn Meteor. Videos and classes on Meteor, NodeJS and Web development](http://eventedmind.com)
+
+### Events
+
++ [Reactive Conference](https://reactive2015.com)
+
+*  *  *
 
 # Slide Deck
 
@@ -55,3 +64,4 @@ Copyright (C) 2014 Hakim El Hattab, http://hakim.se
 Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 
 Copyright (C) 2014 M Haidar Hanif, http://mhaidarhanif.org
+
