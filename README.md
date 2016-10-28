@@ -5,7 +5,7 @@ Get Reactive Today
 |:---- |:--------------
 | Username | [@mhaidarh](https://github.com/mhaidarh)
 | Website  | <http://mhaidarhanif.com>
-| Slide    | [View Live](http://mhaidarhanif.org/talk-reactive)
+| Slide    | <http://mhaidarhanif.com/talk-reactive>
 
 Talk about getting into reactive programming in [3rd Meteor Jakarta Meetup](http://www.meetup.com/Meteor-Jakarta/events/213790002/) on 6th November 2014 ([Worldwide Meteor Day](http://meteorday.com)). Always a work in progress, emphasize improvement overtime.
 
